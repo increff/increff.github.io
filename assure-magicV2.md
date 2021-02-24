@@ -4,6 +4,7 @@
 Assure Magic provides a set of APIs which help any external system(channel) to integrate with Assure Fulfillment Platform like:
 - ERP
 - E-commerce portal
+
 ### Setting Up
 - Go through the documentation of Assure Magic 
 - Mail to assure.support@increff.com for exchange of credentials 
@@ -53,7 +54,6 @@ Outbound | PUT | {Client’s URL}
 This API will push the inventory count to the channel.
 
 #### Description
-
 This api will always send the inventory available for sale. The inventory will always be absolute.
 
 Note : One batch will contain 200 skus .Frequency of this job is configurable in Assure.
@@ -65,12 +65,12 @@ Note : One batch will contain 200 skus .Frequency of this job is configurable in
    "inventories":[
       {
          "quantity":40,
-         "channelSkuCode":"302"
+         "channelSkuCode":"A302"
       }
    ]
 }
 ```
-##### Request Desciption 
+#### Request Desciption 
 
 Parameter Name | Data Type | Description | Mandatory
 ---------------|-----------|-------------|---------
@@ -81,16 +81,24 @@ channelSkuCode | String | Code used by channel to identify an SKU | Yes
 
 
 #### Response Body
+
 ```json
 {
    "failureList":[
       
    ],
    "successList":[
-	"302"
+	"A302"
    ]
 }
 ```
 
 `HttpStatus : 200`
+
+#### Response Desciption 
+
+Parameter Name | Data Type | Description | Mandatory
+---------------|-----------|-------------|---------
+failureList | Strings[] | All those sku whose update was rejected | Yes
+successList| String[] | All those sku whose update was rejected | Yes
 
