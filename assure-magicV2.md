@@ -100,5 +100,5 @@ channelSkuCode | String | Code used by channel to identify an SKU | Yes
 Parameter Name | Data Type | Description | Mandatory
 ---------------|-----------|-------------|---------
 failureList | Strings[] | All those sku whose update was rejected | Yes
-successList| String[] | All those sku whose update was rejected | Yes
+successList| String[] | All those sku whose update was accepted | Yes
 
