@@ -1,31 +1,33 @@
-# Introduction
+# Assure Magic V2 
+
+## Introduction
 Assure Magic provides a set of APIs which help any external system(channel) to integrate with Assure Fulfillment Platform like:
 - ERP
 - E-commerce portal
-## Setting Up
+### Setting Up
 - Go through the documentation of Assure Magic 
 - Mail to assure.support@increff.com for exchange of credentials 
 - Implement required APIs at your end
 - Test your APIs in staging environment
 - Once APIs are developed and tested, please repeat the above process to go live in the production system
 
-### Protocols
+#### Protocols
 REST Synchronous calls 
 
-### Format
+#### Format
 JSON format
 
-### API Invocation
+#### API Invocation
 
 Following headers need to be provided (unless otherwise stated). The credentials will be provided to you upon request.
 - authUsername 
 - authPassword 
 - Content-Type: application/json
 
-## Staging Environment Url
+### Staging Environment Url
 https://staging-oltp.increff.com/assure-magic2
 
-### HTTP Status Codes and Bodies
+#### HTTP Status Codes and Bodies
 
 Both end points must use only following HTTP Status Codes
 - 200: In case of success 
@@ -42,21 +44,21 @@ In case of a 400 or 500 error, following response body JSON should be used
 }
 ```
 
-# Inventory Interface API Reference 
+## Inventory Interface API Reference 
 
-## Update Inventory Count
+### Update Inventory Count
 Outbound | PUT | {Client’s URL}
 
-### Summary
+#### Summary
 This API will push the inventory count to the channel.
 
-### Description
+#### Description
 
 This api will always send the inventory available for sale. The inventory will always be absolute.
 
 Note : One batch will contain 200 skus .Frequency of this job is configurable in Assure.
 
-### Request Body
+#### Request Body
 ```javascript
 {
    "locationCode":"wd003",
@@ -68,7 +70,7 @@ Note : One batch will contain 200 skus .Frequency of this job is configurable in
    ]
 }
 ```
-#### Request Desciption 
+##### Request Desciption 
 
 Parameter Name | Data Type | Description | Mandatory
 ---------------|-----------|-------------|---------
@@ -78,7 +80,7 @@ quantity | Integer | Absolute quantity available for sale sale in Assure | Yes
 channelSkuCode | String | Code used by channel to identify an SKU | Yes
 
 
-### Response Body
+#### Response Body
 ```json
 {
    "failureList":[
